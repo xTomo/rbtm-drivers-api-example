@@ -1,4 +1,10 @@
+import time
+
+
 def get_motor_state(motor_id):
+
+    # time.sleep is used to emulate devices respond lag
+    time.sleep(1)
 
     state = None
 
@@ -16,6 +22,9 @@ def get_motor_state(motor_id):
 
 
 def set_motor_state(motor_id, new_state):
+
+    # time.sleep is used to emulate devices respond lag
+    time.sleep(1)
 
     state = None
 
