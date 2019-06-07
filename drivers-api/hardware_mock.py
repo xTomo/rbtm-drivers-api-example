@@ -87,3 +87,25 @@ def set_motor_state(motor_id, new_state):
     result = {'motor_id': motor_id, 'state': state} if state else None
 
     return result, error_message
+
+
+def get_detector_state():
+
+    # time.sleep is used to emulate devices respond lag
+    time.sleep(1)
+
+    state = 'I am a Detector'
+    result = {'state': state}
+
+    return result, None
+
+
+def set_detector_state(new_state):
+
+    # time.sleep is used to emulate devices respond lag
+    time.sleep(1)
+
+    state = 'Detector state is updated to {}'.format(new_state)
+    result = {'state': state}
+
+    return result, None

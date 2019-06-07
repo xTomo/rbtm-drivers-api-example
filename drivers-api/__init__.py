@@ -11,6 +11,7 @@ def create_app():
     app.register_blueprint(routes.bp_source)
     app.register_blueprint(routes.bp_shutter)
     app.register_blueprint(routes.bp_motor)
+    app.register_blueprint(routes.bp_detector)
 
     @app.after_request
     def after_request(response):

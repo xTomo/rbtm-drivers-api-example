@@ -8,6 +8,7 @@ bp_main = Blueprint('main', __name__, url_prefix='/')
 bp_source = Blueprint('source', __name__, url_prefix='/source')
 bp_shutter = Blueprint('shutter', __name__, url_prefix='/shutter')
 bp_motor = Blueprint('motor', __name__, url_prefix='/motor/<int:motor_id>')
+bp_detector = Blueprint('detector', __name__, url_prefix='/detector')
 
 
 # Base route
@@ -117,6 +118,41 @@ def set_motor_state(motor_id):
     return create_response(
         success=error is None,
         result=motor_state,
+        error=error
+    )
+
+
+# Source routes
+@bp_detector.route('/', methods=['GET'])
+def get_detector_state():
+
+    detector_state, error = hw.get_detector_state()
+    success = error is None
+
+    return create_response(
+        success=success,
+        result=detector_state,
+        error=error
+    )
+
+
+@bp_detector.route('/', methods=['POST'])
+def set_detector_state():
+
+    json_data, error = check_request(request.data)
+    success = error is None
+
+    if not success:
+        return create_response(
+            success=success,
+            error=error
+        )
+
+    detector_state, error = hw.set_detector_state(json_data)
+
+    return create_response(
+        success=error is None,
+        result=detector_state,
         error=error
     )
 
