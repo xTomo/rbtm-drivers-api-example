@@ -1,6 +1,30 @@
 import time
 
 
+def get_source_state():
+
+    # time.sleep is used to emulate devices respond lag
+    time.sleep(1)
+
+    state = 'I am an X-ray source'
+    result = {'state': state}
+
+    return result, None
+
+
+def set_source_state(new_state):
+
+    # time.sleep is used to emulate devices respond lag
+    time.sleep(1)
+
+    value = new_state['switch']
+
+    state = 'X-ray source state is {} now'.format(value)
+    result = {'state': state}
+
+    return result, None
+
+
 def get_shutter_state():
 
     # time.sleep is used to emulate devices respond lag

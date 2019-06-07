@@ -5,6 +5,7 @@ from . import hardware_mock as hw
 
 bp_main = Blueprint('main', __name__, url_prefix='/')
 
+bp_source = Blueprint('source', __name__, url_prefix='/source')
 bp_shutter = Blueprint('shutter', __name__, url_prefix='/shutter')
 bp_motor = Blueprint('motor', __name__, url_prefix='/motor/<int:motor_id>')
 
@@ -13,6 +14,41 @@ bp_motor = Blueprint('motor', __name__, url_prefix='/motor/<int:motor_id>')
 @bp_main.route('/', methods=['GET'])
 def main_route():
     return json.dumps({'success': True, 'description': 'rbtm-drivers API example'})
+
+
+# Source routes
+@bp_source.route('/', methods=['GET'])
+def get_source_state():
+
+    source_state, error = hw.get_source_state()
+    success = error is None
+
+    return create_response(
+        success=success,
+        result=source_state,
+        error=error
+    )
+
+
+@bp_source.route('/', methods=['POST'])
+def set_source_state():
+
+    json_data, error = check_request(request.data)
+    success = error is None
+
+    if not success:
+        return create_response(
+            success=success,
+            error=error
+        )
+
+    source_state, error = hw.set_source_state(json_data)
+
+    return create_response(
+        success=error is None,
+        result=source_state,
+        error=error
+    )
 
 
 # Shutter routes
