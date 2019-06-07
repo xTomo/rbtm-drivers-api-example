@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "c55bbc5a-8498-46b7-aa3f-65d7a67276dc",
+		"name": "RBTM Drivers API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Base request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Source state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/source/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"source",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Source on",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"switch\": \"on\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/shutter/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shutter",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Source off",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"switch\": \"off\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/shutter/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shutter",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Shutter state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/shutter/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shutter",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Shutter on",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"switch\": \"on\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/shutter/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shutter",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Shutter off",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"switch\": \"off\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/shutter/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shutter",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Motor 0 state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/motor/0/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"motor",
+						"0",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Motor 1 state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/motor/1/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"motor",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Motor 2 state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/motor/2/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"motor",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Motor 3 state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/motor/3/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"motor",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Motor 0 state",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"param1\": \"param1.value\",\n\t\"param2\": \"param2.value\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/motor/0/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"motor",
+						"0",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Motor 1 state",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"param1\": \"param1.value\",\n\t\"param2\": \"param2.value\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/motor/1/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"motor",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Motor 2 state",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"param1\": \"param1.value\",\n\t\"param2\": \"param2.value\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/motor/2/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"motor",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Motor 3 state",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"param1\": \"param1.value\",\n\t\"param2\": \"param2.value\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/motor/3/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"motor",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Detector state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/detector/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"detector",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Detector state",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"param1\": \"param1.value\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/detector/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"detector",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
