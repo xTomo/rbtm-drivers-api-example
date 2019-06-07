@@ -1,6 +1,30 @@
 import time
 
 
+def get_shutter_state():
+
+    # time.sleep is used to emulate devices respond lag
+    time.sleep(1)
+
+    state = 'I am a shutter'
+    result = {'state': state}
+
+    return result, None
+
+
+def set_shutter_state(new_state):
+
+    # time.sleep is used to emulate devices respond lag
+    time.sleep(1)
+
+    value = new_state['switch']
+
+    state = 'Shutter state is {} now'.format(value)
+    result = {'state': state}
+
+    return result, None
+
+
 def get_motor_state(motor_id):
 
     # time.sleep is used to emulate devices respond lag
