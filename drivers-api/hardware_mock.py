@@ -1,18 +1,19 @@
 import time
 
 
-def sleep_decorator(func):
+def sleep(seconds):
+    def sleep_decorator(func):
+        def wrapper(*args, **kwargs):
 
-    def wrapper(*args, **kwargs):
+            # time.sleep is used to emulate devices respond lag
+            time.sleep(seconds)
 
-        # time.sleep is used to emulate devices respond lag
-        time.sleep(1)
-        return func(*args, **kwargs)
-
-    return wrapper
+            return func(*args, **kwargs)
+        return wrapper
+    return sleep_decorator
 
 
-@sleep_decorator
+@sleep(1)
 def get_source_state():
 
     state = 'I am an X-ray source'
@@ -21,7 +22,7 @@ def get_source_state():
     return result, None
 
 
-@sleep_decorator
+@sleep(1)
 def set_source_state(new_state):
 
     value = new_state['switch']
@@ -32,7 +33,7 @@ def set_source_state(new_state):
     return result, None
 
 
-@sleep_decorator
+@sleep(1)
 def get_shutter_state():
 
     state = 'I am a shutter'
@@ -41,7 +42,7 @@ def get_shutter_state():
     return result, None
 
 
-@sleep_decorator
+@sleep(1)
 def set_shutter_state(new_state):
 
     value = new_state['switch']
@@ -52,7 +53,7 @@ def set_shutter_state(new_state):
     return result, None
 
 
-@sleep_decorator
+@sleep(1)
 def get_motor_state(motor_id):
 
     state = None
@@ -70,7 +71,7 @@ def get_motor_state(motor_id):
     return result, error_message
 
 
-@sleep_decorator
+@sleep(1)
 def set_motor_state(motor_id, new_state):
 
     state = None
@@ -88,7 +89,7 @@ def set_motor_state(motor_id, new_state):
     return result, error_message
 
 
-@sleep_decorator
+@sleep(1)
 def get_detector_state():
 
     state = 'I am a Detector'
@@ -97,7 +98,7 @@ def get_detector_state():
     return result, None
 
 
-@sleep_decorator
+@sleep(1)
 def set_detector_state(new_state):
 
     state = 'Detector state is updated to {}'.format(new_state)
