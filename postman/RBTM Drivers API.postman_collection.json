@@ -54,12 +54,12 @@
 					"raw": "{\n\t\"switch\": \"on\"\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/shutter/",
+					"raw": "{{base_url}}/source/",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
-						"shutter",
+						"source",
 						""
 					]
 				}
@@ -83,12 +83,12 @@
 					"raw": "{\n\t\"switch\": \"off\"\n}"
 				},
 				"url": {
-					"raw": "{{base_url}}/shutter/",
+					"raw": "{{base_url}}/source/",
 					"host": [
 						"{{base_url}}"
 					],
 					"path": [
-						"shutter",
+						"source",
 						""
 					]
 				}
