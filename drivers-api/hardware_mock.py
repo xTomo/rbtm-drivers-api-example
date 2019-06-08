@@ -1,10 +1,19 @@
 import time
 
 
-def get_source_state():
+def sleep_decorator(func):
 
-    # time.sleep is used to emulate devices respond lag
-    time.sleep(1)
+    def wrapper(*args, **kwargs):
+
+        # time.sleep is used to emulate devices respond lag
+        time.sleep(1)
+        return func(*args, **kwargs)
+
+    return wrapper
+
+
+@sleep_decorator
+def get_source_state():
 
     state = 'I am an X-ray source'
     result = {'state': state}
@@ -12,10 +21,8 @@ def get_source_state():
     return result, None
 
 
+@sleep_decorator
 def set_source_state(new_state):
-
-    # time.sleep is used to emulate devices respond lag
-    time.sleep(1)
 
     value = new_state['switch']
 
@@ -25,10 +32,8 @@ def set_source_state(new_state):
     return result, None
 
 
+@sleep_decorator
 def get_shutter_state():
-
-    # time.sleep is used to emulate devices respond lag
-    time.sleep(1)
 
     state = 'I am a shutter'
     result = {'state': state}
@@ -36,10 +41,8 @@ def get_shutter_state():
     return result, None
 
 
+@sleep_decorator
 def set_shutter_state(new_state):
-
-    # time.sleep is used to emulate devices respond lag
-    time.sleep(1)
 
     value = new_state['switch']
 
@@ -49,10 +52,8 @@ def set_shutter_state(new_state):
     return result, None
 
 
+@sleep_decorator
 def get_motor_state(motor_id):
-
-    # time.sleep is used to emulate devices respond lag
-    time.sleep(1)
 
     state = None
 
@@ -69,10 +70,8 @@ def get_motor_state(motor_id):
     return result, error_message
 
 
+@sleep_decorator
 def set_motor_state(motor_id, new_state):
-
-    # time.sleep is used to emulate devices respond lag
-    time.sleep(1)
 
     state = None
 
@@ -89,10 +88,8 @@ def set_motor_state(motor_id, new_state):
     return result, error_message
 
 
+@sleep_decorator
 def get_detector_state():
-
-    # time.sleep is used to emulate devices respond lag
-    time.sleep(1)
 
     state = 'I am a Detector'
     result = {'state': state}
@@ -100,10 +97,8 @@ def get_detector_state():
     return result, None
 
 
+@sleep_decorator
 def set_detector_state(new_state):
-
-    # time.sleep is used to emulate devices respond lag
-    time.sleep(1)
 
     state = 'Detector state is updated to {}'.format(new_state)
     result = {'state': state}
