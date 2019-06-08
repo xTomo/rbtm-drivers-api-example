@@ -172,11 +172,11 @@ def create_response(success=True, error=None, result=None):
 def check_request(request_data):
 
     if not request_data:
-        return None, create_response(success=False, error='Request is empty')
+        return None, 'Request is empty'
 
     try:
         request_data_dict = json.loads(request_data)
     except TypeError:
-        return None, create_response(success=False, error='Request has not JSON data')
+        return None, 'Request has not JSON data'
     else:
         return request_data_dict, None
