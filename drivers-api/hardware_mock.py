@@ -71,7 +71,7 @@ def get_motor_state(motor_id):
     return result, error_message
 
 
-@sleep(1)
+@sleep(5)
 def set_motor_state(motor_id, new_state):
 
     state = None
